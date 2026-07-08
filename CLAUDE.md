@@ -30,6 +30,27 @@ If new UI needs a color not covered above, derive a tint/shade from one of the f
 source hex codes (`393E41`, `D3D0CB`, `E2C044`, `587B7F`, `1E2019`) rather than picking
 an unrelated color.
 
+### Typography
+
+Fonts are **IBM Plex Sans** (body/UI) and **IBM Plex Mono** (eyebrow text, tags, dates,
+code), self-hosted via the `@fontsource/ibm-plex-sans` and `@fontsource/ibm-plex-mono`
+npm packages — not loaded from an external CDN. Weight CSS files are imported once in
+`src/layouts/BaseLayout.astro` (400/500/600/700 for Plex Sans, 400/500 for Plex Mono);
+every page goes through that layout, so no other file needs to import fonts.
+
+Use the existing variables rather than hardcoding font names:
+
+| Variable | Value | Used for |
+|---|---|---|
+| `--font-sans` | `"IBM Plex Sans", ...` | Body text, nav, UI |
+| `--font-mono` | `"IBM Plex Mono", ...` | Eyebrow labels, tags, dates, code |
+| `--color-heading` | `#F2F0EC` | Headings (h1–h3) and the site wordmark — brighter than `--color-text` for contrast/emphasis |
+
+Headings are bold (700 weight) with tight letter-spacing (`-0.02em`) and explicit sizes
+(h1 2.75rem / h2 1.75rem / h3 1.2rem) so they stand out clearly against body copy. If
+adding a new heading level or emphasis style, follow this same pattern rather than
+relying on browser defaults.
+
 ## Documentation
 
 Full documentation: https://docs.astro.build
