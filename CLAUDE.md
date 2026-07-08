@@ -8,6 +8,28 @@ astro dev --background
 
 Manage the background server with `astro dev stop`, `astro dev status`, and `astro dev logs`.
 
+## Design
+
+The site uses a fixed 5-color palette (dark theme). Always use the existing CSS custom
+properties in `src/styles/global.css` rather than introducing new colors — do not
+hardcode hex values in `.astro` files.
+
+| Variable | Hex | Role |
+|---|---|---|
+| `--color-surface-deep` | `#1E2019` | Header, footer, code blocks (deepest layer) |
+| `--color-bg` | `#393E41` | Main page background |
+| `--color-surface` | `#454B50` | Card backgrounds (derived tint of `--color-bg`, for elevation) |
+| `--color-secondary` | `#587B7F` | Tags/badges, secondary accents |
+| `--color-text` | `#D3D0CB` | Primary text |
+| `--color-text-muted` | `#A7ADA9` | Secondary/muted text (derived tint) |
+| `--color-border` | `#52585C` | Borders, dividers (derived) |
+| `--color-accent` | `#E2C044` | Primary accent — links, headings emphasis, buttons. Use sparingly. |
+| `--color-accent-strong` | `#C7A93A` | Accent hover/active state (derived darker gold) |
+
+If new UI needs a color not covered above, derive a tint/shade from one of the five
+source hex codes (`393E41`, `D3D0CB`, `E2C044`, `587B7F`, `1E2019`) rather than picking
+an unrelated color.
+
 ## Documentation
 
 Full documentation: https://docs.astro.build
