@@ -126,6 +126,34 @@ h1, h2, h3 {
   margin-top: 1.25rem;
 }
 
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.headshot {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--color-surface);
+  box-shadow: 0 0 0 1px var(--color-border);
+  flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .lede {
+    max-width: none;
+  }
+}
+
 .grid {
   display: grid;
   gap: 1.25rem;

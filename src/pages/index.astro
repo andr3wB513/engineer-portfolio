@@ -18,16 +18,21 @@ const highlights = [
 ---
 
 <BaseLayout title="Home">
-  <p class="eyebrow">Chemical Engineer &middot; Licensed PE (South Carolina)</p>
-  <h1>Process design engineering, from PFD to piping isometric.</h1>
-  <p class="lede">
-    I'm a chemical engineer with a background spanning mechanical and computer engineering,
-    specializing in process design for chemical plants &mdash; piping systems, instrumentation,
-    and the diagrams that tie a process together.
-  </p>
-  <p>
-    <a class="button" href="/portfolio/">View case studies</a>
-  </p>
+  <div class="hero">
+    <div>
+      <p class="eyebrow">Chemical Engineer &middot; Licensed PE (South Carolina)</p>
+      <h1>Process design engineering, from PFD to piping isometric.</h1>
+      <p class="lede">
+        I'm a chemical engineer with a background spanning mechanical and computer engineering,
+        specializing in process design for chemical plants &mdash; piping systems, instrumentation,
+        and the diagrams that tie a process together.
+      </p>
+      <p>
+        <a class="button" href="/portfolio/">View case studies</a>
+      </p>
+    </div>
+    <img class="headshot" src="/images/Me.jpg" alt="Andrew Bieber" />
+  </div>
 
   <div class="grid cols-3" style="margin-top: 3rem;">
     {highlights.map((item) => (
