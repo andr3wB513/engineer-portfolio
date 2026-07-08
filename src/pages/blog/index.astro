@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<BaseLayout title="Blog">
+  <p class="eyebrow">Blog</p>
+  <h1>Articles</h1>
+  <p class="lede">In-depth technical articles on process design, piping, and instrumentation.</p>
+
+  <ul class="post-list">
+    {posts.map((post) => (
+      <li>
+        <span class="post-date">
+          {post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+        </span>
+        <h3 style="margin: 0.25rem 0;">
+          <a href={`/blog/${post.id}/`}>{post.data.title}</a>
+        </h3>
+        <p style="color: var(--color-text-muted); margin: 0;">{post.data.description}</p>
+        <div style="margin-top: 0.5rem;">
+          {post.data.tags.map((tag) => <span class="tag">{tag}</span>)}
+        </div>
+      </li>
+    ))}
+  </ul>
+</BaseLayout>

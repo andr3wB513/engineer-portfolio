@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const highlights = [
+  {
+    title: 'Piping System Design (ASME B31.3)',
+    body: 'Process piping design including thermal expansion/flexibility analysis and pressure relief system sizing for chemical plant service.',
+  },
+  {
+    title: 'Instrument Specification Packages',
+    body: 'Vendor-ready instrument spec sheets and datasheets prepared for competitive bidding and procurement.',
+  },
+  {
+    title: 'PFDs & P&IDs',
+    body: 'Process flow diagrams and piping & instrumentation diagrams that document process design intent clearly for engineering and operations.',
+  },
+];
+---
+
+<BaseLayout title="Home">
+  <p class="eyebrow">Chemical Engineer &middot; Licensed PE (South Carolina)</p>
+  <h1>Process design engineering, from PFD to piping isometric.</h1>
+  <p class="lede">
+    I'm a chemical engineer with a background spanning mechanical and computer engineering,
+    specializing in process design for chemical plants &mdash; piping systems, instrumentation,
+    and the diagrams that tie a process together.
+  </p>
+  <p>
+    <a class="button" href="/portfolio/">View case studies</a>
+  </p>
+
+  <div class="grid cols-3" style="margin-top: 3rem;">
+    {highlights.map((item) => (
+      <div class="card">
+        <h3 style="margin-top: 0;">{item.title}</h3>
+        <p style="color: var(--color-text-muted); margin-bottom: 0;">{item.body}</p>
+      </div>
+    ))}
+  </div>
+</BaseLayout>
