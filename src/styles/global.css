@@ -149,6 +149,90 @@ h3 {
   gap: 2.5rem;
 }
 
+.contact-hero {
+  position: relative;
+  min-height: 560px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 1.5rem;
+  margin: 1.5rem 0 2rem;
+  border-radius: 10px;
+  border: 1px solid var(--color-border);
+  background-image: url('/images/backdrop2.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.contact-card {
+  width: 100%;
+  max-width: 440px;
+  background: rgba(30, 32, 25, 0.88);
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1.1rem;
+}
+
+.form-group label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+}
+
+.form-group .optional {
+  text-transform: none;
+  letter-spacing: 0;
+  opacity: 0.8;
+}
+
+.form-group input,
+.form-group textarea {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 0.6rem 0.75rem;
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 1px;
+  border-color: var(--color-accent);
+}
+
+.form-group textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.contact-form .button {
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 640px) {
+  .contact-hero {
+    min-height: 420px;
+    padding: 1.5rem 1rem;
+  }
+}
+
 .headshot {
   width: 180px;
   height: 180px;
