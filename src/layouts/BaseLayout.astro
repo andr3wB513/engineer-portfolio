@@ -38,6 +38,12 @@ const navItems = [
     <header class="site-header">
       <div class="wrap">
         <a class="brand" href="/">Andrew Bieber<span>, PE</span></a>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+        <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
         <nav class="site-nav">
           <ul>
             {navItems.map((item) => (

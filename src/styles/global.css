@@ -94,6 +94,63 @@ nav.site-nav a[aria-current="page"] {
   text-decoration: none;
 }
 
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 28px;
+  height: 22px;
+  cursor: pointer;
+}
+
+.nav-toggle-label span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: var(--color-text);
+  border-radius: 2px;
+}
+
+@media (max-width: 640px) {
+  header.site-header .wrap {
+    flex-wrap: wrap;
+  }
+
+  .nav-toggle-label {
+    display: flex;
+  }
+
+  nav.site-nav {
+    display: none;
+    order: 3;
+    flex: 1 0 100%;
+  }
+
+  nav.site-nav ul {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  nav.site-nav li {
+    border-top: 1px solid var(--color-border);
+  }
+
+  nav.site-nav a {
+    display: block;
+    padding: 0.85rem 0;
+  }
+
+  .nav-toggle:checked ~ nav.site-nav {
+    display: block;
+    margin-top: 1rem;
+  }
+}
+
 main {
   padding: 3rem 0 5rem;
 }
