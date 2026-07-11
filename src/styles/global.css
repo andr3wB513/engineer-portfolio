@@ -64,10 +64,20 @@ header.site-header .wrap {
 }
 
 .brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
   font-weight: 700;
   font-size: 1.1rem;
   color: var(--color-heading);
   letter-spacing: -0.01em;
+}
+
+.brand-logo {
+  display: block;
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
 }
 
 .brand span {
