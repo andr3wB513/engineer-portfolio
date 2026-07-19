@@ -2,9 +2,6 @@
 import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
-export default defineConfig({
-  redirects: {
-    '/portfolio': '/projects',
-    '/portfolio/[id]': '/projects/[id]',
-  },
-});
+// Redirects for renamed/removed pages live in public/_redirects (served
+// as HTTP 301s by Cloudflare).
+export default defineConfig({});
