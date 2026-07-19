@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map((project) => ({
+    params: { id: project.id },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const { Content } = await render(project);
+---
+
+<BaseLayout title={project.data.title} description={project.data.summary}>
+  <p class="eyebrow">{project.data.category}</p>
+  <h1>{project.data.title}</h1>
+  <div class="meta-row">
+    {project.data.tools.map((tool) => <span class="tag">{tool}</span>)}
+  </div>
+  <div class="prose">
+    <Content />
+  </div>
+  <p style="margin-top: 3rem;"><a href="/projects/">&larr; Back to all projects</a></p>
+</BaseLayout>

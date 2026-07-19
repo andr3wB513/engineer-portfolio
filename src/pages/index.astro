@@ -3,16 +3,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 const highlights = [
   {
-    title: 'Piping System Design (ASME B31.3)',
-    body: 'Process piping design including thermal expansion/flexibility analysis and pressure relief system sizing for chemical plant service.',
+    title: 'Chemical Process Design',
+    body: 'Process piping design (ASME B31.3), instrument selection, and pump optimization for chemical plant service. Have a look at <a href="https://www.totalaspectdesign.com/">TAD</a> for more information.',
   },
   {
-    title: 'Instrument Specification Packages',
-    body: 'Vendor-ready instrument spec sheets and datasheets prepared for competitive bidding and procurement.',
+    title: 'Apps, Software & Websites',
+    body: 'Built with React Native, Expo, and Supabase. Published on App Store, personal and commercial use. Check out some <a href="/projects/">examples</a>. Fast static websites built with Astro.',
   },
   {
-    title: 'PFDs & P&IDs',
-    body: 'Process flow diagrams and piping & instrumentation diagrams that document process design intent clearly for engineering and operations.',
+    title: 'Personal Projects',
+    body: 'Woodworking, home electronics, <a href="/blog/">writing</a> about things I do a deep dive on so I have somewhere to publish them. Maybe some shower thoughts, whatever comes to mind...',
   },
 ];
 ---
@@ -20,15 +20,16 @@ const highlights = [
 <BaseLayout title="Home">
   <div class="hero">
     <div>
-      <p class="eyebrow">Chemical Engineer &middot; Licensed PE (South Carolina)</p>
-      <h1>Process design engineering, from PFD to piping isometric.</h1>
+      <p class="eyebrow">Engineer &middot; Licensed PE (South Carolina)</p>
+      <h1>Engineering at the Intersection of Disciplines.</h1>
       <p class="lede">
-        I'm a chemical engineer with a background spanning mechanical and computer engineering,
-        specializing in process design for chemical plants &mdash; piping systems, instrumentation,
-        and the diagrams that tie a process together.
+        I'm an engineer and licensed PE with a background spanning mechanical and computer engineering,
+        who now specializes in process design for chemical plants.
+        I practice process design at <a href="https://www.totalaspectdesign.com">Total Aspect Design</a> &mdash; this site is
+        my home base for everything else I <a href="/projects/">make</a>, or feel like <a href="/blog/">writing</a> about.
       </p>
       <p>
-        <a class="button" href="/portfolio/">View examples of work</a>
+        <a class="button" href="/projects/">See what I've built</a>
       </p>
     </div>
     <img class="headshot" src="/images/Me.jpg" alt="Andrew Bieber" />
@@ -38,7 +39,7 @@ const highlights = [
     {highlights.map((item) => (
       <div class="card">
         <h3 style="margin-top: 0;">{item.title}</h3>
-        <p style="color: var(--color-text-muted); margin-bottom: 0;">{item.body}</p>
+        <p style="color: var(--color-text-muted); margin-bottom: 0;" set:html={item.body} />
       </div>
     ))}
   </div>

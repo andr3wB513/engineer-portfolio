@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
+---
+
+<BaseLayout title="Projects">
+  <p class="eyebrow">Projects</p>
+  <h1>Things I've Built</h1>
+  <p class="lede">
+    Here's a couple of projects I've undergone, and a writeup about them.
+  </p>
+
+  {projects.map((project) => (
+    <div class="card">
+      <p class="eyebrow" style="margin-top: 0;">{project.data.category}</p>
+      <h2 style="margin-top: 0;">
+        <a href={`/projects/${project.id}/`}>{project.data.title}</a>
+      </h2>
+      <p style="color: var(--color-text-muted);">{project.data.summary}</p>
+      <div>
+        {project.data.tools.map((tool) => <span class="tag">{tool}</span>)}
+      </div>
+    </div>
+  ))}
+</BaseLayout>

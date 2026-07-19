@@ -10,7 +10,7 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
 <BaseLayout title="Blog">
   <p class="eyebrow">Blog</p>
   <h1>Articles</h1>
-  <p class="lede">In-depth technical articles on process design, piping, and instrumentation.</p>
+  <p class="lede">Notes on what I'm building and what's going on &mdash; engineering, apps, the workshop, and life.</p>
 
   <ul class="post-list">
     {posts.map((post) => (

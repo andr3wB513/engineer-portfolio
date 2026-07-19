@@ -343,6 +343,10 @@ h3 {
   gap: 1.25rem;
 }
 
+.grid > .card + .card {
+  margin-top: 0;
+}
+
 .grid.cols-3 {
   grid-template-columns: repeat(3, 1fr);
 }
