@@ -357,6 +357,15 @@ h3 {
   }
 }
 
+.construction-notice {
+  font-weight: 700;
+  color: var(--color-accent);
+  border: 1px solid var(--color-accent);
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  max-width: 640px;
+}
+
 .tag {
   display: inline-block;
   font-family: var(--font-mono);
